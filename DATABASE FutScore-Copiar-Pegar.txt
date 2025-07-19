@@ -1,0 +1,23 @@
+create database FutScoreDB;
+use FutScoreDB;
+
+CREATE TABLE usuarios (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(100) NOT NULL,
+  email    VARCHAR(100)
+);
+
+CREATE TABLE apuestas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    match_id BIGINT,
+    resultado VARCHAR(255),
+    goles_totales VARCHAR(255),
+    tarjetas_amarillas VARCHAR(255),
+    penal BOOLEAN,
+    corners VARCHAR(255),
+    ambos_marcan BOOLEAN,
+    quien_anota_primero VARCHAR(255),
+    monto DECIMAL(10,2)
+);
+
